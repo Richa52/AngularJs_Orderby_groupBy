@@ -1,0 +1,21 @@
+<div ng-app="myApp">
+  <div ng-controller="myCtrl">
+    <a href="" ng-click="ourGrouper ='color'">Color</a>
+    <a href="" ng-click="ourGrouper ='DueDate'">Make</a>
+
+    <ul ng-repeat="(key, value) in cars | orderBy: 'color' | groupBy:ourGrouper">
+      <li>{{key}}
+        <ul>
+          <li ng-repeat="d in value | orderBy: '-DueDate'">
+           DueDate: {{d.DueDate}}
+          
+          </li>
+            <li ng-repeat="d in value | orderBy: '-docketNumber'">
+           DocketNumber : {{d.docketNumber}}
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+</div>
